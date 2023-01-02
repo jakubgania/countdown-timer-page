@@ -110,15 +110,20 @@
             var countDownDate = new Date(datetime).getTime();
             // var countDownDate = new Date("Aug 19, 2021 17:45:00").getTime();
             // var countDownDate = new Date("August 29, 2019 8:10:00").getTime();
-            // var now = new Date()
 
-            // document.getElementById("current-date").innerHTML = now
             document.getElementById("end-date").innerHTML = datetime
 
             // Update the count down every 1 second
             var x = setInterval(function() {
                 // Get today's date and time
                 var now = new Date().getTime();
+                var current = new Date()
+
+                var currentMonth = current.getUTCMonth() + 1
+                var currentDay = current.getUTCDate()
+                var currentYear = current.getUTCFullYear()
+                currentDate = currentMonth + "," + currentYear
+                document.getElementById("current-date").innerHTML = currentDate
 
                 // Find the distance between now and the count down date
                 var distance = countDownDate - now;
