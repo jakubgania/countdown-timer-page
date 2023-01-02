@@ -106,7 +106,7 @@
 
         <script>
             // Set the date we're counting down to
-            var datetime = "Jan 01, 2024 00:00:00"
+            var datetime = "Jan 01 2024 00:00:00"
             var countDownDate = new Date(datetime).getTime();
             // var countDownDate = new Date("Aug 19, 2021 17:45:00").getTime();
             // var countDownDate = new Date("August 29, 2019 8:10:00").getTime();
@@ -116,13 +116,10 @@
             // Update the count down every 1 second
             var x = setInterval(function() {
                 // Get today's date and time
-                var now = new Date().getTime();
-                var current = new Date()
+                var time = new Date()
+                var now = time.getTime();
 
-                var currentMonth = current.getUTCMonth() + 1
-                var currentDay = current.getUTCDate()
-                var currentYear = current.getUTCFullYear()
-                currentDate = currentMonth + "," + currentYear
+                currentDate = String(time).slice(4, 25)
                 document.getElementById("current-date").innerHTML = currentDate
 
                 // Find the distance between now and the count down date
